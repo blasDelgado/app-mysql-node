@@ -6,12 +6,11 @@ async function promesa(qr) {
 }
 
 export async function consultas(qr) {
-  const resultado = await promesa(qr)
-    .then((resultado) => {
-      return resultado;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  return resultado;
+  try {
+    const resultado = await promesa(qr);
+
+    return resultado;
+  } catch (err) {
+    console.log(err);
+  }
 }
